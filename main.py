@@ -23,3 +23,18 @@ def resample(samples, input_rate, output_rate):
         fraction = position - left
         output.append(samples[left] * (1 - fraction) + samples[right] * fraction)
     return output
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--input', type=Path, help='JSON {samples:[...], input_rate:int, output_rate:int}')
+    args = parser.parse_args()
+    try:
+        p = json.loads(args.input.read_text()) if args.input else {'samples': [0, 0.5, 1, 0.5, 0, -0.5, -1, -0.5], 'input_rate': 8000, 'output_rate': 12000}
+        if not isinstance(p, dict):
+            raise ValueError('Input must be an object')
+        output = resample(p['samples'], p['input_rate'], p['output_rate'])
+        print(json.dumps({'input_samples': len(p['samples']), 'output_samples': len(output), 'samples': output, 'limitation': 'No anti-alias filter; use a band-limited DSP library for audio quality'}, indent=2))
+    except (ValueError, KeyError, TypeError, OSError) as exc:
+        parser.error(str(exc))
+if __name__ == '__main__':
+    main()
