@@ -15,3 +15,7 @@ class ResampleTests(unittest.TestCase):
     def test_downsample_and_length(self):
         self.assertEqual(resample([0, 0.25, 0.5, 0.75], 4, 2), [0, 0.5])
         self.assertEqual(len(resample([0] * 5, 3, 2)), 4)
+
+    def test_constant_single_and_empty(self):
+        self.assertEqual(resample([0.25], 1, 3), [0.25] * 3)
+        self.assertEqual(resample([], 2, 3), [])
