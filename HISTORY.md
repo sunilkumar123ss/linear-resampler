@@ -4,7 +4,7 @@ This reference implementation and all of the following milestone commits were pr
 
 **Every recorded author and committer date in this timeline is synthetic. These dates are not evidence that the code was written, tested, deployed, or used professionally in the past.**
 
-This snapshot is milestone 8 of 13. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
+This snapshot is milestone 9 of 13. It is an incomplete tutorial stage; source, fixtures, tests, the CLI, and automation are introduced progressively.
 
 The progression decomposes already-completed October 2026 code into meaningful additions. It is not recovered original development history. Publication time is separate from the synthetic Git timestamps.
 
@@ -20,7 +20,7 @@ The progression decomposes already-completed October 2026 code into meaningful a
 | 6 | 2024-03-03T17:24:12+05:30 | Cover linear ramp (present) |
 | 7 | 2024-03-23T16:49:48+05:30 | Cover downsample and length (present) |
 | 8 | 2024-06-10T16:56:33+05:30 | Cover constant single and empty (present) |
-| 9 | 2024-09-24T17:39:32+05:30 | Cover invalid (later stage) |
+| 9 | 2024-09-24T17:39:32+05:30 | Cover invalid (present) |
 | 10 | 2025-10-27T10:40:51+05:30 | Describe package metadata and default verification arguments (later stage) |
 | 11 | 2025-11-06T17:57:34+05:30 | Add the isolated test, demo and help verifier (later stage) |
 | 12 | 2026-03-02T10:13:53+05:30 | Run the repository verifier in continuous integration (later stage) |

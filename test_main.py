@@ -19,3 +19,10 @@ class ResampleTests(unittest.TestCase):
     def test_constant_single_and_empty(self):
         self.assertEqual(resample([0.25], 1, 3), [0.25] * 3)
         self.assertEqual(resample([], 2, 3), [])
+
+    def test_invalid(self):
+        for (samples, a, b) in [([float('nan')], 1, 2), ([2], 1, 2), ([0], 0, 2), ([0], True, 2), ([0], 1, 20000000)]:
+            with self.assertRaises(ValueError):
+                resample(samples, a, b)
+if __name__ == '__main__':
+    unittest.main()
