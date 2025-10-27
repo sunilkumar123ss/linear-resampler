@@ -1,0 +1,8 @@
+{
+  "slug": "linear-resampler",
+  "title": "Linear Sample-Rate Converter",
+  "description": "Convert a normalized waveform to another sample rate using explicit linear interpolation.",
+  "category": "voice",
+  "demo_args": [],
+  "expected_exit": 0
+}
